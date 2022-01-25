@@ -177,7 +177,9 @@
 }
 
 .linea{
-    animation:asterisco 366ms 2766ms forwards, asterisco 30ms 5533ms forwards, asterisco 60ms 6000ms forwards;
+    animation:  asterisco 366ms 2766ms forwards,
+                asterisco 30ms 5533ms forwards, 
+                asterisco 150ms 6000ms forwards;
     fill: transparent;
     stroke: black;
     stroke-dasharray: 100;
@@ -195,7 +197,13 @@
 }
 
 #cubo{        
-    animation: cubo 160ms ease-in-out 1060ms 1 normal forwards, girar-cubo 840ms ease-in-out 1460ms 1 normal forwards, giro-cubo-1 1940ms ease-out 2500ms 1 normal forwards ;  
+    animation:  cubo 160ms ease-in-out 1060ms 1 normal forwards, 
+                girar-cubo 840ms ease-in-out 1460ms 1 normal forwards,  
+                /* giro-cubo-1 1900ms ease-in 2600ms 1 normal forwards,   */
+                giro-cubo-1 475ms ease-in  2600ms 1 normal forwards,  
+                giro-cubo-2 475ms ease-out 3075ms 1 normal forwards,  
+                giro-cubo-3 475ms ease-in  3550ms 1 normal forwards,  
+                giro-cubo-4 475ms ease-out 4025ms 1 normal forwards;  
     margin: 0px auto;
     position: absolute;
     transform-style: preserve-3d;
@@ -215,7 +223,7 @@
 }   
 
 
-@keyframes girar-cubo {
+ @keyframes girar-cubo {
     0%{
         transform: rotateX(0deg)
     }
@@ -223,8 +231,8 @@
     100%{
         transform: rotateX(-90deg);
     }
-}
-
+} 
+/* 
 @keyframes giro-cubo-1 {
     0%{
         transform: rotateX(-90deg) rotateZ(0deg);
@@ -238,6 +246,48 @@
         background-color: #C41635; 
     }
 }
+ */
+ 
+
+ @keyframes giro-cubo-1 {
+    from{
+        transform: rotateX(-90deg) rotateZ(0deg);
+    }
+
+    to{
+        transform: rotate3d(-1,-1,0, 180deg); 
+    }
+}
+
+@keyframes giro-cubo-2 {
+    from{
+        transform: rotate3d(-1,-1,0, 180deg); 
+    }
+
+    to{
+        transform: rotate3d(0,1,0, -270deg);
+    }
+}
+@keyframes giro-cubo-3 {
+    from{
+        transform: rotate3d(0,1,0, -270deg);
+    }
+
+    to{
+        transform: rotate3d(-1,1,0, -180deg)
+    }
+}
+@keyframes giro-cubo-4 {
+    from{
+        transform: rotate3d(-1,1,0, -180deg)
+    }
+
+    to{
+        transform: rotate3d(1,0,0, 90deg);
+        background-color: #C41635; 
+    }
+}
+
 
 
 .cara{        
@@ -395,7 +445,7 @@
 }
 
 .circ4{
-    animation: circulo-aumento 1700ms ease-out 5460ms 1 normal forwards;
+    animation: circulo-aumento 1700ms linear 5460ms 1 normal forwards;
 }
 
 @keyframes circulo-aumento {
