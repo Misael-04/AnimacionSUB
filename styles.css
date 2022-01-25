@@ -131,6 +131,7 @@
 #cuadrado-2{        
     animation: cuadrado 1s ease-out 400ms 1 normal forwards, girar-cuadrado 1540ms ease-out 1540ms 1 normal forwards, eliminar-cuadros 40ms linear 3900ms 1 normal forwards ;
     background-color: #ffc5c7;
+    border: 1px solid #ffc5c7;
     margin: 0px auto;
     position: absolute;
 }
